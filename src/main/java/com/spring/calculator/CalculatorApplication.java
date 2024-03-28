@@ -15,11 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorApplication {
 	public static void main(String[] args) {
+
 		SpringApplication.run(CalculatorApplication.class, args);
-		System.out.println("Pirmoji spring boot aplikacija");
-	}
-	@GetMapping
-	public String hello(@RequestParam(value= "name", defaultValue= "World") String name){
-		return String.format("Hello %s!", name);
+
 	}
 }
