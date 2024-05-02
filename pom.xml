@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -11,8 +11,7 @@
 	<groupId>com.spring</groupId>
 	<artifactId>calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<!-- Paketas(Archyvas)Kuriame bus sudėti visi aplikacijos moduliai.
-	 War naudojamas aplikacijos įdėjimui į tomcat serverį. -->
+	<!-- Paketas(Archyvas)Kuriame bus sudėti visi aplikacijos moduliai. War naudojamas aplikacijos įdėjimui į tomcat serverį. -->
 	<packaging>war</packaging>
 	<name>calculator</name>
 	<description>Internet calculator</description>
@@ -20,18 +19,19 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<!--  Biblioteka skirta Spring Boot aplikacijoms. -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.7.0</version>
 		</dependency>
-		<!-- Biblioteka skirta testams. -->
+		<!-- reikalingas kad veiktų projektas su JSP failais -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>runtime</scope>
 		</dependency>
-		<!-- Jeigu nepridėsime, gausime javax.servlet.ServletException-->
+		<!-- Jeigu nepridėsime, gausime javax.servlet.ServletException -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -39,11 +39,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Reikalingas, kad veiktu projektas su JSP failais -->
+		<!-- Biblioteka skirta testams. -->
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 		<dependency>
@@ -51,8 +51,18 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>8.0.1.Final</version>
 		</dependency>
-
-
+		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.5.0.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
